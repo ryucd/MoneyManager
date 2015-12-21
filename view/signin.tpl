@@ -2,7 +2,7 @@
   <head>
 	<title>{{title}}</title>
     <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="117225263272-0jbnrsnglncfob2lh8p1jprq235dqkhp.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="{{GOOGLE_CLIENT_ID}}">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
   </head>
   <body>
@@ -21,7 +21,7 @@
         console.log("ID Token: " + id_token);
 
 		var xhr = new XMLHttpRequest();
-		xhr.open('POST', 'http://localhost:8080/tokensignin');
+		xhr.open('POST', '{{SERVER_URL}}/tokensignin');
 		xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 		xhr.onload = function() {
 			console.log('Signed in as: ' + xhr.responseText);

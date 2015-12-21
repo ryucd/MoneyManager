@@ -26,6 +26,6 @@ def tokenSignin():
 @route("/")
 @view("view/signin")
 def hello_world():
-	return dict(title="title")
+	return dict(title="title", GOOGLE_CLIENT_ID=CLIENT_ID, SERVER_URL=os.getenv("SERVER_URL"))
 
-run(host="localhost", port=int(os.environ.get("PORT", 8080)))
+run(host=os.getenv("HOST_NAME"), port=int(os.environ.get("PORT", 8080)))
