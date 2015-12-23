@@ -2,6 +2,8 @@ import os
 from bottle import get, post, request, route, run, view, template
 from oauth2client import client, crypt
 
+import db
+
 CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
 
 def verifyToken(token):
