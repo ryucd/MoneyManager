@@ -3,7 +3,7 @@ import psycopg2
 import urlparse
 
 urlparse.uses_netloc.append("postgres")
-url = urlparse.urlparse(os.environ["DATABASE_URL"])
+url = urlparse.urlparse(os.environ[os.getenv("HEROKU_DATABASE_URL")])
 
 conn = psycopg2.connect(
     database=url.path[1:],
